@@ -28,8 +28,12 @@ export class RankViewerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Action taken when selecting a product category.
+   * @param datasetId category identifier.
+   */
   onDatasetSelection(datasetId: DatasetId) {
-    this.store.dispatch(new AppActions.SelectDataset(DatasetId.BSR_FURNITURE));
+    this.store.dispatch(new AppActions.SelectDataset(datasetId));
   }
 
 }
