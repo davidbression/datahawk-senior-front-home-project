@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-left: 30px;
+  color: white;
+  font-size: larger
+}
+
+.filters {
+  flex-grow: 2
+}

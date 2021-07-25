@@ -1,2 +1,17 @@
-<dh-rank-viewer-filters [datasetIds]="datasetIds" [selectedId]="(selectedDatasetId$ | async)" (datasetSelect)="onDatasetSelection($event)"></dh-rank-viewer-filters>
-<dh-rank-viewer-chart [chartOptions]="chartsOptions" [selectedDataset]="(selectedDataset$ | async)"></dh-rank-viewer-chart>
+<div class="header">
+	<div class="title">
+		Best-selling products
+	</div>
+	<div class="filters">
+		<dh-rank-viewer-filters [datasetIds]="datasetIds" [selectedId]="(selectedDatasetId$ | async)"
+								(datasetSelect)="onDatasetSelection($event)"
+								[selectedDateRange]="(selectedDateRange$ | async)"
+								(dateRangeSelect)="onDateRangeSelection($event)"
+								[selectedMinMaxDateRange]="(selectedMinMaxDateRange$ | async)"
+								[selectedMaxRank]="(selectedMaxRank$ | async)"
+								(maxRankSelect)="onMaxRankSelection($event)"
+		></dh-rank-viewer-filters>
+	</div>
+</div>
+<dh-rank-viewer-chart [chartOptions]="chartsOptions"
+					  [selectedDataset]="(selectedDataset$ | async)"></dh-rank-viewer-chart>

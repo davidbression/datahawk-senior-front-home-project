@@ -1,11 +1,27 @@
 <div class="filters">
-    <div class="dropdown">
-        <select class="dropdown-select" #selectList (change)="onDatasetClick(selectList.value)">
-            <option *ngFor="let id of datasetIds"
-                    [value]="id"
-                    [selected]="selectedId === id">
-                {{ id.toUpperCase() }}
-            </option>
-        </select>
-    </div>
+	<div class="dropdown">
+		<select class="dropdown-select" #selectList (change)="onDatasetClick(selectList.value)">
+			<option *ngFor="let id of datasetIds"
+					[value]="id"
+					[selected]="selectedId === id">
+				{{ id.toUpperCase() }}
+			</option>
+		</select>
+	</div>
+
+	<div id="dateRangeSelector" class="dateRange">
+		<div class="dateRangeField">
+			<span>Date Range: </span>
+			<span>{{this.formattedSelectedDateRange}}</span>
+		</div>
+	</div>
+
+	<div id="maxRankSelector" class="maxRank">
+		<div class="maxRankField">
+			<label for="selectMaxRank">Max product rank: </label>
+			<input #selectMaxRank id="selectMaxRank" type="number" min="0" max="100" step="1"
+				   [value]="this.selectedMaxRank" (change)="onChangeMaxRank(+selectMaxRank.value)">
+		</div>
+	</div>
+
 </div>
